@@ -4,8 +4,8 @@ const GoalFollow = goals.GoalFollow
 
 const bot = mineflayer.createBot({
   host: 'pogchampmommymilkers.ploudos.me', 
-  port: 25565, username: 
-  'Technoblade',
+  port: 25565, 
+  username: 'Technoblade',
 });
 bot.loadPlugin(pathfinder)
 
@@ -75,4 +75,3 @@ function attackPlayer(username) {
     })
   }, 148.8)
 }
-client.login(config.token)
