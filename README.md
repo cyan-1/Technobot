@@ -14,6 +14,4 @@ open the folder in command prompt
 
 run: `npm i`
 
-edit the server with your server ip,
-
-edit the username for a different user
+EDIT THE SERVER IP IN `index.js` TO YOUR OWN SERVER IP
