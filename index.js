@@ -3,7 +3,7 @@ const { pathfinder, Movements, goals } = require('mineflayer-pathfinder')
 const GoalFollow = goals.GoalFollow
 
 const bot = mineflayer.createBot({
-  host: 'Bigdickbitchdotcom.ploudos.me', //EDIT THE IP
+  host: 'YOUR SERVER IP', //EDIT THE IP
   port: 25565, //EDIT THE PORT
   username: 'Technoblade',
 });
