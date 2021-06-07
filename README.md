@@ -1,7 +1,7 @@
 # Technobot
  Youtuber Technoblade Minecraft Bot
  
- **Disclaimer: This Is Only A Demo The Real Bot Will Be A Plugin**
+ **Disclaimer: This Is Only A Demo And It Only Works In Servers, The Real Bot Will Be A Plugin**
  
  ## Setup
 
