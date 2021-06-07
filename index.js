@@ -3,20 +3,21 @@ const { pathfinder, Movements, goals } = require('mineflayer-pathfinder')
 const GoalFollow = goals.GoalFollow
 
 const bot = mineflayer.createBot({
-  host: 'pogchampmommymilkers.ploudos.me', 
-  port: 25565, 
+  host: 'Bigdickbitchdotcom.ploudos.me', //EDIT THE IP
+  port: 25565, //EDIT THE PORT
   username: 'Technoblade',
 });
 bot.loadPlugin(pathfinder)
 
 bot.on(`physicTick`, lookAtPlayer)
+
 bot.on('chat', (username, message) => {
 
-  if(message ==="follow"){//enable technopet follows player really cutely 
+  if(message.toLocaleLowerCase() === "follow"){//enable technopet follows player really cutely 
     followPlayer(username)
   }
 
-  if (message === "start") {//start pvp 
+  if (message.toLocaleLowerCase() === "start") {//start pvp 
     followPlayer(username);
     attackPlayer(username);
   }
@@ -27,17 +28,14 @@ bot.on('chat', (username, message) => {
 })
 
 bot.on('death', async () => {
-  bot.chat("heh HACKS, Hypixel pls ban")
+  bot.chat("HEH HACKS, hypixel pls ban");
 })
-
-bot.on('playerJoined', async ()=>{
-  bot.chat("Technoblade")
+bot.on('playerJoined', async (player)=>{
+  bot.chat("Technoblade");
 })
-
-bot.on('playerLeft', async ()=> {
-  bot.chat("Nerd")
+bot.on('playerLeft', async (player)=> {
+  bot.chat("Nerd");
 })
-
 function lookAtPlayer() {
   const playerFilter = (entity) => entity.type === 'player'
   const playerEntity = bot.nearestEntity(playerFilter)
@@ -48,25 +46,27 @@ function lookAtPlayer() {
   bot.lookAt(pos)
 }
 function followPlayer(username) {
-  const playerCI = bot.players[username]
-
-  if (!playerCI || !playerCI.entity) {
-    return;
-  }
+  const player = bot.players[username]
+  if (!player || !player.entity) return;
 
   const mcData = require('minecraft-data')(bot.version)
   const movements = new Movements(bot, mcData)
 
   bot.pathfinder.setMovements(movements)
 
-  const goal = new GoalFollow(playerCI.entity, 1)
+  const goal = new GoalFollow(player.entity, 1)
   bot.pathfinder.setGoal(goal, true)
 }
 function attackPlayer(username) {
   var pvp = setInterval(() => {
     const player = bot.players[username]
     if (!player || !player.entity) {
-      return clearInterval(pvp);
+      clearInterval(pvp);
+      if(bot.health > 0 && bot.health <= 3){
+        bot.chat("NOT EVEN CLOSE BABY TECHNOBLADE NEVER DIES")
+      }
+      
+      return; 
     }
 
     const pos = player.entity.position.offset(0, player.entity.height, 0)
