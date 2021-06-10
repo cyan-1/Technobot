@@ -25,7 +25,7 @@ run: `node .`
 
 __Server Settings:__
 
-Since the bot is a real player and not a NPC your server must have cracked.
+Since the bot is a real player and not a NPC your server must be cracked.
 
 > How to make a server cracked:
 > 
